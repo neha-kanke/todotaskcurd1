@@ -40,7 +40,6 @@ this.todoelemnet.nativeElement.value = ""
   }
 
   onupdatebtn() {
-
     let updateobj = {
       todoName: this.todoelemnet.nativeElement.value,
       todoId: this.editId
@@ -51,13 +50,9 @@ this.todoelemnet.nativeElement.value = ""
     this.todoelemnet.nativeElement.value = ""
 
   }
-
-
   ondelete(todo:Itodo) {
    let getindex= this.todoarr.findIndex(todo1=>todo1.todoId===todo.todoId)
    console.log(getindex);
-   
-    
     this.todoarr.splice(getindex,1)
   }
 }
