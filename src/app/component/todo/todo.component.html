@@ -1,0 +1,31 @@
+
+<div class="row">
+    <div class="col-md-6">
+        <h4 class="text-center text-upperacse">{{iseditbrn ?"updatebtodo" :"Addtodo"}}</h4>
+        <div class="form-group">
+            <label for="add-todo">Add todo</label>
+            <input type="text" class="form-control" #todoelemnet>
+        </div>
+        <button class="btn btn-info btn-block" (click)="onaddbtn()" *ngIf="!iseditbrn">AddBtn</button>
+        <button class="btn btn-primary btn-block" (click)="onupdatebtn()" *ngIf="iseditbrn">UpdateBtn</button>
+    </div>
+    <div class="col-md-6">
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between" *ngFor="let todo of todoarr ,index as i" >
+                {{todo.todoName}}
+              <div>
+                  <span (click)="oneditbtn(todo)"><i class="fa-sharp fa-regular fa-pen-to-square fa-2x"></i></span>
+                <span (click)="ondelete(i)"><i class="fa-solid fa-xmark fa-2x"></i></span>
+              </div>
+            </li>
+         
+        </ul>
+        
+      <p *ngIf="todoarr.length <=0" class="alert alert-warning md-4">
+            no todos!!!
+         </p>
+
+    </div>
+       
+</div>
+ 
