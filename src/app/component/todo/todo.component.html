@@ -1,4 +1,3 @@
-
 <div class="row">
     <div class="col-md-6">
         <h4 class="text-center text-upperacse">{{iseditbrn ?"updatebtodo" :"Addtodo"}}</h4>
@@ -11,21 +10,28 @@
     </div>
     <div class="col-md-6">
         <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between" *ngFor="let todo of todoarr ,index as i" >
+            <li class="list-group-item d-flex justify-content-between" *ngFor="let todo of todoarr ,index as i">
                 {{todo.todoName}}
-              <div>
-                  <span (click)="oneditbtn(todo)"><i class="fa-sharp fa-regular fa-pen-to-square fa-2x"></i></span>
-                <span (click)="ondelete(i)"><i class="fa-solid fa-xmark fa-2x"></i></span>
-              </div>
+                <!-- <div>
+                    <span (click)="oneditbtn(todo)"><i class="fa-solid fa-xmark fa-2x"></i></span>
+                    <span (click)="ondelete(i)"><i class="fa-solid fa-xmark fa-2x"></i></span>
+                </div> -->
+                <div class="example-button-container">
+                    <button mat-mini-fab color="accent" aria-label="Example icon button with a bookmark icon"
+                        (click)="oneditbtn(todo)" class="mr-2">
+                        <mat-icon >edit</mat-icon>
+                    </button>
+                    <button mat-mini-fab color="warn" aria-label="Example icon button with a bookmark icon"
+                        (click)="ondelete(todo)">
+                        <mat-icon >delete</mat-icon>
+                    </button>
+                </div>
+
             </li>
-         
         </ul>
-        
-      <p *ngIf="todoarr.length <=0" class="alert alert-warning md-4">
+        <p *ngIf="todoarr.length <=0" class="alert alert-warning md-4">
             no todos!!!
-         </p>
+        </p>
 
     </div>
-       
 </div>
- 

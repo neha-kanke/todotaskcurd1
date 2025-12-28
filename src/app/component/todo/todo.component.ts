@@ -53,7 +53,11 @@ this.todoelemnet.nativeElement.value = ""
   }
 
 
-  ondelete(i: number) {
-    this.todoarr.splice(i)
+  ondelete(todo:Itodo) {
+   let getindex= this.todoarr.findIndex(todo1=>todo1.todoId===todo.todoId)
+   console.log(getindex);
+   
+    
+    this.todoarr.splice(getindex,1)
   }
 }
