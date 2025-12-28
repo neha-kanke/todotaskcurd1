@@ -81,5 +81,6 @@ export class TodoComponent implements OnInit {
     );
     console.log(getindex);
     this.todoarr.splice(getindex, 1);
+    this.opensnackbar(`Delete the todo list ${todo.todoName} item`)
   }
 }
